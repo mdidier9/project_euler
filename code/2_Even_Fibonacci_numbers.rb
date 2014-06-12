@@ -3,7 +3,18 @@
 # By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
 def even_fib_sum(max_value)
-
+	fib_nums = [0,1]
+		while fib_nums.last < max_value do
+		    fib_nums << fib_nums[-2] + fib_nums[-1]
+		end
+	fib_nums.pop 
+ 	fib_nums.inject do |sum, n| 
+		if n%2 == 0
+			sum + n
+		else
+			sum
+		end
+	end    
 end
 
-# p even_fib_sum(4000000)
+p even_fib_sum(4000000) == 4613732 #=> true
