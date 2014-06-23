@@ -6,7 +6,7 @@ def smallest_multiple(max)
 	current_num = 1
 	solved = false
 	while solved == false do
-		(1..max).each do |num|
+		(1..max).to_a.reverse.each do |num|
 			if current_num % num != 0
 				current_num += 1
 				solved = false
@@ -18,5 +18,5 @@ def smallest_multiple(max)
 	return current_num
 end
 
-p smallest_multiple(10) == 2520 #=> true
-p smallest_multiple(20) == 232792560 #=> true (although very slow)
+# p smallest_multiple(10) == 2520 #=> true
+p smallest_multiple(20) #== 232792560 #=> true (although very slow)
